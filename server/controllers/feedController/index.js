@@ -4,8 +4,8 @@ const Comment = require("../../models/feeds/comment")
 exports.create = async (req, res,next) => {
    try{
     const user = req.user
-    const {text , imgurl} = req.body
-    const feed = new Feed({  text, imgurl, user})
+    const {caption , imgurl} = req.body
+    const feed = new Feed({  caption, imgurl, user})
     await feed.save()
     res.status(300).json({
         message: 'Feed created successfully'
@@ -18,6 +18,7 @@ exports.create = async (req, res,next) => {
 // API route to like a feed
 exports.toggleLike = async (req, res) => {
     try {
+        const user = req.user
         const feedId = req.params.feedId ;
         const feed = await Feed.findById(feedId);
         if (!feed) {

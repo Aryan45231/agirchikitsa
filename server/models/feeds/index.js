@@ -5,7 +5,7 @@ const feedSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    text: {
+    caption: {
         type: String,
         required: true
     },

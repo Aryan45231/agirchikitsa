@@ -63,7 +63,7 @@ app.use("/api/v1/feed",
   feedRoutes)
 
 // Admin Routes
-app.use("/api/u1/admin",
+app.use("/api/v1/admin",
   authenticate,
   privateRoute([
     "SuperAdmin",

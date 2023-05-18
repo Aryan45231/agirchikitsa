@@ -34,7 +34,7 @@ exports.deleteFeed = async (req, res, next) => {
 exports.updatedFeed = async (req, res, next) => {
     try {
         const user = req.user
-        const { feedId, text } = req.body
+        const { feedId, caption } = req.body
         if (!["Admin", "SuperAdmin"].includes(user.roles)) {
             const error = new Error("You don't have permission to update this feed")
             err.statusCode = 400
@@ -46,7 +46,7 @@ exports.updatedFeed = async (req, res, next) => {
             err.statusCode = 401;
             throw err;
         }
-        const updatedFeed = await Feed.findByIdAndUpdate(feedId, { $set: { text } }, { new: true })
+        const updatedFeed = await Feed.findByIdAndUpdate(feedId, { $set: { caption } }, { new: true })
         if (updatedFeed) {
             res.status(200).json({
                 message: "Feed updated successfully"
