@@ -42,14 +42,19 @@ exports.login = async (req, res, next) => {
 
 exports.signup = async (req, res, next) => {
   try {
-    const { name, roles, companyId , email , password} = req.body;
-    if (["SuperAdmin", "Admin"].includes(roles)) {
+    const { name, roles, companyId } = req.body;
+    if (["SuperAdmin"].includes(roles)) {
       const err = new Error(
         `User with role as ${roles} is not allowed to create, please contact the administrator!`
       );
       err.statusCode = 403;
       throw err;
     }
+    if(!["Admin" , "Moderator"].includes(roles)){
+            const err = new Error(" User role is not allowed");
+            err.statusCode = 403;
+            throw err;
+    }     
     const existingUser = await User.findOne({ companyId });
     if (existingUser) {
       const err = new Error("Company Id already in use!");
@@ -60,13 +65,10 @@ exports.signup = async (req, res, next) => {
     newUser.name = name;
     newUser.roles = roles;
     newUser.companyId = companyId;
-    newUser.email = email;
-    newUser.password = await newUser.encryptPassword(password)
     newUser = await newUser.save();
-    const token = jwt.encode({ id: newUser._id }, config.jwtSecret);
     res.status(200).json({
-      newUser,
-      token,
+      message:" New user created successfully",
+      newUser
     });
   } catch (err) {
     next(err);
@@ -82,8 +84,8 @@ exports.updateProfile = async (req, res, next) => {
       err.statusCode = 403;
       throw err;
     }
-    if (update?.updateType) {
-      if (existingUser?.isProfileCompleted) {
+    if (update.updateType==="register") {
+      if (existingUser.isProfileCompleted) {
         const err = new Error(
           "User already exists. Please try for logging in!"
         );
@@ -91,8 +93,8 @@ exports.updateProfile = async (req, res, next) => {
         throw err;
       }
       update = { ...update, isProfileCompleted: true };
-    }
-    if (update?.password) {
+    } 
+    if (update.password) {
       const encryptPassword = await existingUser.encryptPassword(
         update.password
       );

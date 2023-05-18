@@ -1,5 +1,5 @@
-const Feed = require("../../models/feeds/index.js")
-const User = require("../../models/user/index.js")
+const Feed = require("../../../models/feeds/index.js")
+const User = require("../../../models/user/index.js")
 
 // Admin controlls on Feed instance
 exports.deleteFeed = async (req, res, next) => {

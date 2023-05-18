@@ -90,11 +90,10 @@ export default function Register() {
             onChange={handleDropdown}
           >
             <option value="" defaultValue>
-              Please select your work profile
+              Please select your Role
             </option>
             <option value="Admin">Admin</option>
-            <option value="Manager">Manager</option>
-            <option value="Supervisor">Supervisor</option>
+            <option value="Moderator">Moderator</option>
           </select>
           <div>
             {isFormValid.selectedOption && (

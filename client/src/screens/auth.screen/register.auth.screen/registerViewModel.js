@@ -95,7 +95,7 @@ export default function RegisterViewModel() {
     try {
       setLoading(true);
       const data = await authRepository.verifyEmployeeId(employeeId, roles);
-      updateProfile(data.companyId, { email, password, name });
+      updateProfile(data.companyId, { email, password, name , updateType:"register" });
     } catch (error) {
       alert.error(error.message);
       setLoading(false);

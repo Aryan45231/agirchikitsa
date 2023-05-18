@@ -9,7 +9,7 @@ import TaskHistoryFillSvg from "./svg.assets/taskHistoryFill.svg";
 import HamburgerIconSvg from "./svg.assets/hamburgerIcon.svg";
 import LogoBigSvg from "./svg.assets/logoBig.svg";
 import SearchIconSvg from "./svg.assets/searchIcon.svg";
-import LogoSvg from "./svg.assets/logo.svg";
+import LogoSvg from "./svg.assets/logo.png";
 import OpenEyeSvg from "./svg.assets/openeye.svg";
 import CloseEyeSvg from "./svg.assets/closeEye.svg";
 import CrossButtonSvg from "./svg.assets/crossButton.svg";
