@@ -1,0 +1,22 @@
+.container{
+    padding: 16px;
+
+}
+
+.taskAssignFormContainer{
+padding: 16px;
+}
+.taskAssignFormFooter{
+    height: 100%;
+    padding:0 16px;
+}
+.heading{
+    text-align: center;
+}
+.customCardFooterAlignment{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+}

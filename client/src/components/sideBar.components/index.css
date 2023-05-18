@@ -1,0 +1,53 @@
+.sidebarContainer {
+  display: flex;
+
+  height: 100vh;
+}
+.logoSidebar {
+  background-color: #f3f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db;
+}
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+.logOutButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.sidebarContainer .active {
+  text-decoration: none;
+}
+.sidebarContainer .inActive {
+  text-decoration: none;
+}
+.hamburgerIcon {
+  display: flex;
+  align-items: center;
+  margin: 7px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.topLogo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+.sb-button {
+  background-color: #f3f6f8;
+  border-style: none;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 0;
+}

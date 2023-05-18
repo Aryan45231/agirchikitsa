@@ -1,0 +1,61 @@
+.disbaledButton {
+  color: #00c1a3;
+  background-color: #f3f6f8;
+  border: 1px solid #f3f6f8;
+  border-radius: 6px;
+  font-size: 16px;
+  height: 40px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+.modelContainer {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+.iconButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+.moving-sentence {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.sentence {
+  animation: moveSentence 15s linear infinite;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+@keyframes moveSentence {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.buttonHover {
+  background: #ffffff;
+}
+.buttonHover :hover {
+  background-color: #ecfffc;
+}
+.LoadingAnimation{
+  position: relative;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}

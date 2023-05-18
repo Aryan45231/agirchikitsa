@@ -1,0 +1,32 @@
+.registerFlex {
+  background-color: #f3f6f8;
+}
+
+.inputHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.registerLoginBtn {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f6f8;
+}
+.errorFieldWidth{
+  width: 250px;
+}
+.dropdownMenuStyle {
+  width: 273px;
+  height: 45px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  color: #4c5863;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
